@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Assignment1</string>
+    <string-array name="spinnerMakeArray">
+        <item>Audi</item>
+        <item>Chevrolet</item>
+        <item>Dodge</item>
+        <item>Hyundai</item>
+        <item>Honda</item>
+        <item>Porche</item>
+        <item>Volvo</item>
+        <item>Volkswagen</item>
+    </string-array>
+</resources>
