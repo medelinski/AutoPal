@@ -10,4 +10,5 @@
         <item>Volvo</item>
         <item>Volkswagen</item>
     </string-array>
+    <string name="title_activity_user">User</string>
 </resources>

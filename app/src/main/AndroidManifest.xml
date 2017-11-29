@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MyCar" />
-        <activity android:name=".Register"></activity>
+        <activity android:name=".Register" />
     </application>
 
 </manifest>
