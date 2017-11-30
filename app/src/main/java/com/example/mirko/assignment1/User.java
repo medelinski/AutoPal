@@ -20,7 +20,7 @@ public class User {
         public User(int id, String name, long skillPoints) {
             this.id = id;
             this.name = name;
-            this.skillPoints  = skillPoints;
+            this.skillPoints = skillPoints;
             this.level = 0;
         }
 

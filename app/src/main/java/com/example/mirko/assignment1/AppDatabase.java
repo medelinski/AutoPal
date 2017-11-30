@@ -17,7 +17,7 @@ public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase INSTANCE;
 
     public abstract UserDao userDao();
-    public abstract UserDetailsDao trophyDao();
+    public abstract UserDetailsDao userDetailsDao();
 
     public static AppDatabase getDatabase(Context context) {
         if (INSTANCE == null) {

@@ -15,14 +15,14 @@ import java.util.List;
 @Dao
 public interface UserDetailsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void addTrophy(UserDetails trophy);
+    void addUserDetails(UserDetails userDetails);
 
-    @Query("SELECT * FROM trophy WHERE userId=:userId")
-    List<UserDetails> findTrophiesForUser(int userId);
+    @Query("SELECT * FROM userDetails WHERE userId=:userId")
+    List<UserDetails> findUserDetailsForUser(int userId);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    void updateTrophy(UserDetails userDetails);
+    void updateUserDetails(UserDetails userDetails);
 
-    @Query("delete from trophy where id = :id")
+    @Query("delete from userDetails where id = :id")
     void delete(long id);
 }
