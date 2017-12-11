@@ -8,18 +8,6 @@
     tools:context="com.example.mirko.assignment1.OilChange"
     tools:showIn="@layout/activity_oil_change">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
-        android:layout_width="393dp"
-        android:layout_height="67dp"
-        android:layout_gravity="bottom"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="445dp" />
-
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
@@ -138,19 +126,18 @@
         android:layout_width="125dp"
         android:layout_height="52dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="141dp"
         android:layout_marginTop="8dp"
         android:text="Search"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spYearOil"
-        app:layout_constraintVertical_bias="0.181"
+        app:layout_constraintVertical_bias="0.799"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Spinner
         android:id="@+id/spMakeOil"
@@ -199,7 +186,7 @@
         app:layout_constraintLeft_toRightOf="@+id/textView15"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spModelOil"
-        app:layout_constraintVertical_bias="0.184"
+        app:layout_constraintVertical_bias="0.0"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
@@ -208,5 +195,21 @@
         android:layout_width="226dp"
         android:layout_height="26dp"
         tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="285dp" />
+        tools:layout_editor_absoluteY="315dp" />
+
+    <Button
+        android:id="@+id/btnSave2"
+        android:layout_width="118dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="my car"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.952"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

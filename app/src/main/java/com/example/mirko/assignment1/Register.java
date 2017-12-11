@@ -53,7 +53,7 @@ public class Register extends AppCompatActivity {
             Error.setText("The passwords do not match.");
         }
         else{
-            Intent intent = new Intent(Register.this, MyCar.class);
+            Intent intent = new Intent(Register.this, OilChange.class);
             startActivity(intent);
         }
     }
