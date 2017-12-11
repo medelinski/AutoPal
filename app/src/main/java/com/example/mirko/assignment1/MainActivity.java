@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.txtUsername);
         Toast.makeText(this, userDetailsForUser.toString(), Toast.LENGTH_SHORT).show();
         if (user.size()>0){
-            textView.setText(user.get(0).name + " Skill points " + user.get(0).skillPoints + " Trophys " + userDetailsForUser.size() );
+            textView.setText(user.get(0).name);
         }
     }
 
