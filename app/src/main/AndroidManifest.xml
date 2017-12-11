@@ -18,6 +18,14 @@
         </activity>
         <activity android:name=".MyCar" />
         <activity android:name=".Register" />
+        <activity
+            android:name=".OilChange"
+            android:label="@string/title_activity_oil_change"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OilResults"
+            android:label="@string/title_activity_oil_results"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
