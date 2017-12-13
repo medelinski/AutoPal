@@ -10,14 +10,15 @@ import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 
-@Database(entities = {User.class,   UserDetails.class
-}, version = 16, exportSchema = false)
+@Database(entities = {User.class,   UserDetails.class, CarInfo.class
+}, version = 17, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
 
     public abstract UserDao userDao();
     public abstract UserDetailsDao userDetailsDao();
+    public abstract CarInfoDao carInfoDao();
 
     public static AppDatabase getDatabase(Context context) {
         if (INSTANCE == null) {
