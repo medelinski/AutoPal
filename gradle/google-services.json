@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "901181598612",
+    "firebase_url": "https://autopal-7571e.firebaseio.com",
+    "project_id": "autopal-7571e",
+    "storage_bucket": "autopal-7571e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901181598612:android:079f814254929801",
+        "android_client_info": {
+          "package_name": "com.example.mirko.assignment1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901181598612-47qqthpfcvermn0p4rppsqg9756b75uc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf46FHxLQqxnvC8UTV3Q0hkzxQtjrtxTI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

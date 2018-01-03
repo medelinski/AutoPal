@@ -3,11 +3,15 @@ package com.example.mirko.assignment1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
 
 import java.util.List;
 
@@ -27,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         database = AppDatabase.getDatabase(getApplicationContext());
+
+
+
 
         Username = (EditText)findViewById(R.id.txtUsername);
         Password = (EditText)findViewById(R.id.txtPassword);
@@ -84,6 +91,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+
+
+    }
+    public class MyFirebaseInstanceIdService extends FirebaseInstanceIdService {
+        @Override
+        public void onTokenRefresh() {
+            // Get updated InstanceID token.
+            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+            Log.d("myfirebaseid", "Refreshed token: " + refreshedToken);
+
+            // If you want to send messages to this application instance or
+            // manage this apps subscriptions on the server side, send the
+            // Instance ID token to your app server.
+            //sendRegistrationToServer(refreshedToken);
+        }
     }
     private void updateFirstUserData() {
         List<User> user = database.userDao().getAllUser();

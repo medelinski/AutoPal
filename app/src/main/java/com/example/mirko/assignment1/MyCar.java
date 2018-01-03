@@ -31,8 +31,9 @@ public class MyCar extends AppCompatActivity {
         Website.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri webpage = Uri.parse("https://developer.android.com/training/data-storage/files.html");
+                Uri webpage = Uri.parse("http://www.fram.com/");
                 Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+                startActivity(webIntent);
             }
         });
 
