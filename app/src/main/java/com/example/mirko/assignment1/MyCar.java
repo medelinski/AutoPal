@@ -17,25 +17,28 @@ import android.net.Uri;
 
 public class MyCar extends AppCompatActivity {
 
-    private Button Download;
-    private Button Website;
+
+    private Button Store;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_car);
 
-        Download = (Button)findViewById(R.id.btnDownload);
-        Website = (Button)findViewById(R.id.btnWebsite);
 
-        Website.setOnClickListener(new View.OnClickListener() {
+        Store = (Button)findViewById(R.id.btnStore);
+
+
+        Store.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri webpage = Uri.parse("http://www.fram.com/");
-                Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
-                startActivity(webIntent);
+
+                Uri location = Uri.parse("geo:43.417010, -80.513441");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+                startActivity(mapIntent);
             }
         });
+/*
 
         Download.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +65,7 @@ public class MyCar extends AppCompatActivity {
                 }
             }
         });
+*/
 
 
     }

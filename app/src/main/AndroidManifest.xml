@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mirko.assignment1">
+
     <user-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,18 +24,14 @@
             android:name=".OilChange"
             android:label="@string/title_activity_oil_change"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".OilResults"
-            android:label="@string/title_activity_oil_results"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <service
-            android:name=".MainActivity$MyFirebaseInstanceIdService">
+
+        <service android:name=".MainActivity$MyFirebaseInstanceIdService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
-
+        <activity android:name=".OilResults"></activity>
     </application>
 
 </manifest>
