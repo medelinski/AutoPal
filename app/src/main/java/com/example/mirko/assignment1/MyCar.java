@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.location.Location;
 import android.location.LocationListener;
@@ -18,8 +19,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import android.net.Uri;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +36,7 @@ public class MyCar extends AppCompatActivity implements LocationListener {
     private Button Store;
     private TextView textLocation;
     private String coordinates;
+    private String [] pages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +45,12 @@ public class MyCar extends AppCompatActivity implements LocationListener {
 
         textLocation = (TextView) findViewById(R.id.txtLocation);
         Store = (Button) findViewById(R.id.btnStore);
-        textLocation.setText("geo:43.417010, -80.513441");
+
+        final ListView lv = (ListView) findViewById(R.id.myList1);
+        pages = new String[]{"Canadian tire","Walmart", "Part source"};
+        final List<String> MyList1 = new ArrayList<String>(Arrays.asList(pages));
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, MyList1);
+        lv.setAdapter(arrayAdapter);
 
         Store.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,13 +79,14 @@ public class MyCar extends AppCompatActivity implements LocationListener {
                 2000,
                 10, this);
 
+
     }
 
     @Override
     public void onLocationChanged(Location location) {
         String locMsg = "New Latitude: " + location.getLatitude()
                 + "New Longitude: " + location.getLongitude();
-
+        textLocation = (TextView) findViewById(R.id.txtLocation);
         Toast.makeText(getBaseContext(), locMsg, Toast.LENGTH_LONG).show();
         textLocation.setText(locMsg);
     }

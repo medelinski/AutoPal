@@ -6,39 +6,17 @@
     android:layout_height="match_parent"
     tools:context="com.example.mirko.assignment1.OilChange">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
 
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.design.widget.TabLayout
-        android:layout_width="match_parent"
-        android:layout_height="77dp">
-
-        <android.support.design.widget.TabItem
-            android:id="@+id/tabOil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Oil Change" />
-
-        <android.support.design.widget.TabItem
-            android:id="@+id/tabMyCar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="My Car" />
-
-        <android.support.design.widget.TabItem
-            android:id="@+id/tabRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Register" />
-    </android.support.design.widget.TabLayout>
 
     <include
         android:id="@+id/include"
         layout="@layout/content_oil_change"
         android:layout_height="309dp" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.design.widget.CoordinatorLayout>
