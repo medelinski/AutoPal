@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
@@ -68,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
         // add some data
         List<User> users = database.userDao().getAllUser();
         if (users.size()==0) {
-            database.userDao().addUser(new User(1, "Mirko", 1));
+            database.userDao().addUser(new User(1, "Mirko", "1234"));
             user = database.userDao().getAllUser().get(0);
             Toast.makeText(this, String.valueOf(user.id), Toast.LENGTH_SHORT).show();
             UserDetails userDetails = new UserDetails(user.id, "Learned to use 3");
             database.userDetailsDao().addUserDetails(userDetails);
-            database.userDao().addUser(new User(2, "Igor", 2));
-            database.userDao().addUser(new User(3, "John", 3));
+            database.userDao().addUser(new User(2, "Igor", "1234"));
+            database.userDao().addUser(new User(3, "John", "1234"));
         }
         updateFirstUserData();
     }
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         List<UserDetails> userDetailsForUser = database.userDetailsDao().findUserDetailsForUser(user.get(0).id);
         TextView textView = findViewById(R.id.txtUsername);
         Toast.makeText(this, userDetailsForUser.toString(), Toast.LENGTH_SHORT).show();
-        if (user.size()>0){
+        if (user.size()>0 || user.size() <20){
             textView.setText(user.get(0).name);
         }
     }
