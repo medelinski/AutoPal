@@ -1,6 +1,9 @@
 package com.example.mirko.assignment1;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +17,8 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
 import java.util.List;
+import java.util.jar.*;
+import java.util.jar.Manifest;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -71,9 +76,10 @@ public class MainActivity extends AppCompatActivity {
             database.userDao().addUser(new User(2, "Igor", 2));
             database.userDao().addUser(new User(3, "John", 3));
         }
-
         updateFirstUserData();
     }
+
+
 
     private void validate (String userName, String userPassword){
         if((userName.equals(user.name)) && (userPassword.equals("1234"))){
