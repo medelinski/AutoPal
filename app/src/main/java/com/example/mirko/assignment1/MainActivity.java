@@ -70,12 +70,13 @@ public class MainActivity extends AppCompatActivity {
         List<User> users = database.userDao().getAllUser();
         if (users.size()==0) {
             database.userDao().addUser(new User(1, "Mirko", "1234"));
+            database.userDao().addUser(new User(2, "Igor", "1234"));
+            database.userDao().addUser(new User(3, "John", "1234"));
             user = database.userDao().getAllUser().get(0);
             Toast.makeText(this, String.valueOf(user.id), Toast.LENGTH_SHORT).show();
             UserDetails userDetails = new UserDetails(user.id, "Learned to use 3");
             database.userDetailsDao().addUserDetails(userDetails);
-            database.userDao().addUser(new User(2, "Igor", "1234"));
-            database.userDao().addUser(new User(3, "John", "1234"));
+
         }
         updateFirstUserData();
     }
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void validate (String userName, String userPassword){
-        if((userName.equals(user.name)) && (userPassword.equals("1234"))){
+        if((userName.equals(user.name)) && (userPassword.equals(user.password))){
             Intent intent = new Intent (MainActivity.this,OilChange.class);
             startActivity(intent);
         }
@@ -113,6 +114,8 @@ public class MainActivity extends AppCompatActivity {
             // Instance ID token to your app server.
             //sendRegistrationToServer(refreshedToken);
         }
+
+
     }
     private void updateFirstUserData() {
         List<User> user = database.userDao().getAllUser();

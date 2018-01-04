@@ -39,7 +39,7 @@ public class MyCar extends AppCompatActivity implements LocationListener {
 
         textLocation = (TextView) findViewById(R.id.txtLocation);
         Store = (Button) findViewById(R.id.btnStore);
-
+        textLocation.setText("geo:43.417010, -80.513441");
 
         Store.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +48,7 @@ public class MyCar extends AppCompatActivity implements LocationListener {
                 Uri location = Uri.parse("geo:43.417010, -80.513441");
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
                 startActivity(mapIntent);
+
             }
         });
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);

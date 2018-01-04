@@ -50,12 +50,11 @@ public class Register extends AppCompatActivity implements OnClickListener{
             public void onClick(View view) {
                 validate(NewUser.getText().toString(),Email.getText().toString(),NewPass.getText().toString()
                 ,ConPass.getText().toString());
-
-
+                SingUp.setOnClickListener(this);
             }
         });
 
-        SingUp.setOnClickListener(this);
+
 
         database = AppDatabase.getDatabase(getApplicationContext());
 
@@ -81,17 +80,14 @@ public class Register extends AppCompatActivity implements OnClickListener{
         	email = Email.getText().toString();
         	name = ConPass.getText().toString();
 
-
-
-
             List<User> users = database.userDao().getAllUser();
-            	userCount = users.size() + 1;
-            	database.userDao().addUser(new User(userCount, username, password));
-            	Toast.makeText(Register.this,
-                    	"Account created", Toast.LENGTH_SHORT).show();
-            	Intent prefIntent = new Intent(Register.this, PreferenceActivity.class);
-            	prefIntent.putExtra("usernameInput", username);
-            	Register.this.startActivity(prefIntent);
+            userCount = users.size() + 1;
+            database.userDao().addUser(new User(userCount, username, password));
+            Toast.makeText(Register.this,
+                "Account created", Toast.LENGTH_SHORT).show();
+            Intent prefIntent = new Intent(Register.this, PreferenceActivity.class);
+            prefIntent.putExtra("usernameDetails", username);
+            Register.this.startActivity(prefIntent);
 
 
     }
